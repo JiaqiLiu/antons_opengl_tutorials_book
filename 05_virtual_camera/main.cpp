@@ -286,7 +286,7 @@ int main () {
       mat4 T = translate(identity_mat4(), vec3(model_pos[0], model_pos[1], model_pos[2]));
       mat4 R = identity_mat4();
       R = rotate_x_deg(R, model_aw[0]); // TODO: I don't know here whether the order matters or not. 
-      R = rotate_y_deg(R, model_aw[1]);
+      R = rotate_y_deg(R, model_aw[1]); // TODO: I think the order matters, so I believe here is wrong. 
       R = rotate_z_deg(R, model_aw[2]);
       model_matrix = T * R;
       glUniformMatrix4fv(model_mat_location, 1, GL_FALSE, model_matrix.m);
