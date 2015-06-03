@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\01_extended_init\main.c" />
+    <ClCompile Include="..\..\01_extended_init\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{44A070BE-F4AB-4761-882B-8B98E7F34516}</ProjectGuid>

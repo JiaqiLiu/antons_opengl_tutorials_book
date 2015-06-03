@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\01_extended_init\main.c">
+    <ClCompile Include="..\..\01_extended_init\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,5 +1,14 @@
-﻿Build started 30/06/2014 18:25:37.
+﻿Build started 6/3/2015 9:51:16 PM.
+     1>Project "C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\00_hello_triangle\00_hello_triangle.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\common\include /I..\..\common\include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\00_hello_triangle\main.c
+         main.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\Debug\00_hello_triangle.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\common\msvc110 /LIBPATH:..\..\common\msvc110\ glew32.lib glfw3.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib glfw3.lib glew32.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\Debug\00_hello_triangle.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\Debug\00_hello_triangle.lib" /MACHINE:X86 Debug\main.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         00_hello_triangle.vcxproj -> C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\Debug\00_hello_triangle.exe
+     1>Done Building Project "C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\00_hello_triangle\00_hello_triangle.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.00
+Time Elapsed 00:00:00.80
