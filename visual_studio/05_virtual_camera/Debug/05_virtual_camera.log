@@ -1,5 +1,67 @@
-﻿Build started 30/06/2014 18:25:37.
+﻿Build started 6/3/2015 10:04:43 PM.
+     1>Project "C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\05_virtual_camera\05_virtual_camera.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\common\include /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\05_virtual_camera\gl_utils.cpp ..\..\05_virtual_camera\main.cpp ..\..\05_virtual_camera\maths_funcs.cpp
+         maths_funcs.cpp
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(262): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(266): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(509): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(521): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(533): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(581): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(647): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(648): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(649): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(650): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\maths_funcs.cpp(655): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         main.cpp
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(124): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(195): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(199): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(203): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(207): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(211): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(215): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(219): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(223): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(237): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(241): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(245): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(249): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(253): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(257): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(261): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(265): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(269): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(273): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(277): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\main.cpp(281): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+         gl_utils.cpp
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\gl_utils.cpp(25): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\gl_utils.cpp(35): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\time.inl(86) : see declaration of 'ctime'
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\gl_utils.cpp(43): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\gl_utils.cpp(62): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\gl_utils.cpp(151): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\gl_utils.cpp(163): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\gl_utils.cpp(170): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>c:\users\liuj0d\documents\antons_opengl_tutorials_book\05_virtual_camera\gl_utils.cpp(180): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(115) : see declaration of 'strcat'
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\Debug\05_virtual_camera.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\common\msvc110\ glfw3.lib glew32.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\Debug\05_virtual_camera.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\Debug\05_virtual_camera.lib" /MACHINE:X86 Debug\gl_utils.obj
+         Debug\main.obj
+         Debug\maths_funcs.obj
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         05_virtual_camera.vcxproj -> C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\Debug\05_virtual_camera.exe
+     1>Done Building Project "C:\Users\liuj0d\Documents\antons_opengl_tutorials_book\visual_studio\05_virtual_camera\05_virtual_camera.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.00
+Time Elapsed 00:00:00.77
