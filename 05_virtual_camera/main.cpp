@@ -152,7 +152,7 @@ int main () {
   mat4 model_matrix = identity_mat4();
   float model_yaw_speed = 20.0f;
   float model_pos[] = {0.0f, 0.0f, 0.0f};
-  float model_aw[] = {0.0f, 0.0f, 0.0f}; // z-rotation in degrees
+  float model_aw[] = {0.0f, 0.0f, 0.0f}; // TODO: Please correct this. Yaw is a words...
 
   /* get location numbers of matrices in shader programme */
   GLint model_mat_location = glGetUniformLocation (shader_programme, "model");
