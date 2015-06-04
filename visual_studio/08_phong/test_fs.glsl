@@ -28,11 +28,13 @@ void main () {
 	vec3 distance_to_light_eye = light_position_eye - position_eye;
 	vec3 direction_to_light_eye = normalize (distance_to_light_eye);
 	float dot_prod = dot (direction_to_light_eye, normal_eye);
-	dot_prod = max (dot_prod, 0.0);
+	// dot_prod = max (dot_prod, 0.0);
+	dot_prod = abs(dot_prod); // To make the color of both side the same. 
 	vec3 Id = Ld * Kd * dot_prod; // final diffuse intensity
 	
 	// specular intensity
 	vec3 surface_to_viewer_eye = normalize (-position_eye);
+	
 	
 	//vec3 reflection_eye = reflect (-direction_to_light_eye, normal_eye);
 	//float dot_prod_specular = dot (reflection_eye, surface_to_viewer_eye);
@@ -44,8 +46,10 @@ void main () {
 	float dot_prod_specular = max (dot (half_way_eye, normal_eye), 0.0);
 	float specular_factor = pow (dot_prod_specular, specular_exponent);
 	
-	vec3 Is = Ls * Ks * specular_factor; // final specular intensity
+	// vec3 Is = Ls * Ks * specular_factor; // final specular intensity
+	vec3 Is = vec3(0.0, 0.0, 0.0);
 	
 	// final colour
 	fragment_colour = vec4 (Is + Id + Ia, 1.0);
+	// fragment_colour = vec4(dot_prod, 0.0, 0.0, 1.0);
 }

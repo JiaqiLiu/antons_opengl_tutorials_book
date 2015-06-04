@@ -93,13 +93,17 @@ int main () {
 	
 	/* create VIEW MATRIX */
 	float cam_pos[] = {0.0f, 0.0f, 2.0f}; // don't start at zero, or we will be too close
-	float cam_yaw = 0.0f; // y-rotation in degrees
-	mat4 T = translate (identity_mat4 (), vec3 (-cam_pos[0], -cam_pos[1], -cam_pos[2]));
-	mat4 R = rotate_y_deg (identity_mat4 (), -cam_yaw);
-	mat4 view_mat = R * T;
+  float cam_yaw = 0.0f; // y-rotation in degrees // yaw is a word, please check it.
+  float cam_yaw_speed = 40.0f; // x degrees per second
+  mat4 view_mat = look_at(
+    vec3(cam_pos[0], cam_pos[1], cam_pos[2]),
+    vec3(0.0, 0.0, 0.0),
+    vec3(0.0, 1.0, 0.0));
 	
 	/* matrix for moving the triangle */
-	mat4 model_mat = identity_mat4 ();
+  float model_yaw = 0.0f;
+  float model_yaw_speed = 40.0f;
+	mat4 model_mat = identity_mat4();
 	
 	glUseProgram (shader_programme);
 	int view_mat_location = glGetUniformLocation (shader_programme, "view_mat");
@@ -109,13 +113,18 @@ int main () {
 	int model_mat_location = glGetUniformLocation (shader_programme, "model_mat");
 	glUniformMatrix4fv (model_mat_location, 1, GL_FALSE, model_mat.m);
 	
-	glEnable (GL_CULL_FACE); // cull face
-	glCullFace (GL_BACK); // cull back face
-	glFrontFace (GL_CW); // GL_CCW for counter clock-wise
+  // We want to see the back, so we disable it. 
+	glDisable(GL_CULL_FACE); 
+	//glEnable (GL_CULL_FACE); // cull face
+	//glCullFace (GL_BACK); // cull back face
+	//glFrontFace (GL_CW); // GL_CCW for counter clock-wise
 	
 	while (!glfwWindowShouldClose (g_window)) {
 		_update_fps_counter (g_window);
-		double current_seconds = glfwGetTime ();
+    double current_seconds = glfwGetTime ();
+    static double previous_seconds = glfwGetTime ();
+    double elapsed_seconds = current_seconds - previous_seconds;
+    previous_seconds = current_seconds;
 		
 		// wipe the drawing surface clear
 		glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -123,9 +132,44 @@ int main () {
 		
 		glUseProgram (shader_programme);
 		
-		model_mat.m[12] = sinf (current_seconds);
-		glUniformMatrix4fv (model_mat_location, 1, GL_FALSE, model_mat.m);
-		
+    // move model. 
+		bool model_moved = false;
+    if (glfwGetKey(g_window, GLFW_KEY_A)) {
+      model_yaw = -model_yaw_speed * elapsed_seconds; // Please note the difference. We don't use -= here. 
+      model_moved = true;
+    }
+    if (glfwGetKey(g_window, GLFW_KEY_D)) {
+      model_yaw = model_yaw_speed * elapsed_seconds;
+      model_moved = true;
+    }
+    if (model_moved) {
+      mat4 R = rotate_y_deg(identity_mat4(), model_yaw);
+      model_mat = R * model_mat;
+      glUniformMatrix4fv(model_mat_location, 1, GL_FALSE, model_mat.m);
+    }
+
+    // move camera. 
+    bool cam_moved = false;
+    if (glfwGetKey (g_window, GLFW_KEY_LEFT)) {
+      cam_yaw += cam_yaw_speed * elapsed_seconds;
+      cam_moved = true;
+    }
+    if (glfwGetKey (g_window, GLFW_KEY_RIGHT)) {
+      cam_yaw -= cam_yaw_speed * elapsed_seconds;
+      cam_moved = true;
+    }
+    /* update view matrix */
+    if (cam_moved) {
+      mat4 R = rotate_y_deg (identity_mat4 (), cam_yaw);
+      vec3 old_cam_pos(cam_pos[0], cam_pos[1], cam_pos[2]);
+      vec3 new_cam_pos = vec3(R * vec4(old_cam_pos, 1));
+      view_mat = look_at(
+        new_cam_pos,
+        vec3(0.0, 0.0, 0.0),
+        vec3(0.0, 1.0, 0.0));
+      glUniformMatrix4fv (view_mat_location, 1, GL_FALSE, view_mat.m);
+    }
+
 		glBindVertexArray (vao);
 		// draw points 0-3 from the currently bound VAO with current in-use shader
 		glDrawArrays (GL_TRIANGLES, 0, 3);
