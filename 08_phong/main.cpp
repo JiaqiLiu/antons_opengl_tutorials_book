@@ -151,11 +151,12 @@ int main () {
     // move camera. 
     bool cam_moved = false;
     if (glfwGetKey (g_window, GLFW_KEY_LEFT)) {
-      cam_yaw += cam_yaw_speed * elapsed_seconds;
+      // we want to really move camera, so we directly control it. 
+      cam_yaw -= cam_yaw_speed * elapsed_seconds;
       cam_moved = true;
     }
     if (glfwGetKey (g_window, GLFW_KEY_RIGHT)) {
-      cam_yaw -= cam_yaw_speed * elapsed_seconds;
+      cam_yaw += cam_yaw_speed * elapsed_seconds;
       cam_moved = true;
     }
     /* update view matrix */
