@@ -47,8 +47,8 @@ void main () {
 	dot_prod_specular = abs(dot_prod_specular); // We want to make both face reflect light. 
 	float specular_factor = pow (dot_prod_specular, specular_exponent);
 	
-	// vec3 Is = Ls * Ks * specular_factor; // final specular intensity
-	vec3 Is = vec3(0.0, 0.0, 0.0);
+	vec3 Is = Ls * Ks * specular_factor; // final specular intensity
+	// vec3 Is = vec3(0.0, 0.0, 0.0);
 	
 	// final colour
 	fragment_colour = vec4 (Is + Id + Ia, 1.0);
