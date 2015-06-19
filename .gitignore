@@ -5,3 +5,9 @@
 *.tlog
 *.idb
 *.lastbuildstate
+*.suo
+*.log
+*.obj
+*.pdb
+*.exe
+*.ilk
