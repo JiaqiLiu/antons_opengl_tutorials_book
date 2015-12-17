@@ -139,11 +139,11 @@ int main () {
 		glEnableVertexAttribArray (1);
 	}
 	GLuint texcoords_vbo;
-	if (NULL != vp) {
+	if (NULL != vt) {
 		glGenBuffers (1, &texcoords_vbo);
 		glBindBuffer (GL_ARRAY_BUFFER, texcoords_vbo);
 		glBufferData (
-			GL_ARRAY_BUFFER, 2 * g_point_count * sizeof (GLfloat), vp, GL_STATIC_DRAW
+			GL_ARRAY_BUFFER, 2 * g_point_count * sizeof (GLfloat), vt, GL_STATIC_DRAW
 		);
 		glVertexAttribPointer (2, 2, GL_FLOAT, GL_FALSE, 0, NULL);
 		glEnableVertexAttribArray (2);

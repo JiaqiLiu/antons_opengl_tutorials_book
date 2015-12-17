@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\00_hello_triangle\main.c">
+    <ClCompile Include="..\..\00_hello_triangle\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

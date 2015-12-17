@@ -69,12 +69,31 @@ bool load_mesh (const char* file_name, GLuint* vao, int* point_count) {
 	GLfloat* texcoords = NULL; // array of texture coordinates
 	if (mesh->HasPositions ()) {
 		points = (GLfloat*)malloc (*point_count * 3 * sizeof (GLfloat));
-		for (int i = 0; i < *point_count; i++) {
+
+    // jiaqi
+    // Here, I move the model to origin. 
+    aiVector3D centre;
+    for (int i = 0; i < *point_count; i++) {
 			const aiVector3D* vp = &(mesh->mVertices[i]);
-			points[i * 3] = (GLfloat)vp->x;
-			points[i * 3 + 1] = (GLfloat)vp->y;
-			points[i * 3 + 2] = (GLfloat)vp->z;
+      centre += *vp;
 		}
+    centre.x = centre.x / (*point_count);
+    centre.y = centre.y / (*point_count);
+    centre.z = centre.z / (*point_count);
+    for (int i = 0; i < *point_count; i++) {
+			const aiVector3D* vp = &(mesh->mVertices[i]);
+			points[i * 3] = (GLfloat)vp->x - centre.x;
+			points[i * 3 + 1] = (GLfloat)vp->y - centre.y;
+			points[i * 3 + 2] = (GLfloat)vp->z - centre.z;
+		}
+    // end jiaqi
+
+		//for (int i = 0; i < *point_count; i++) {
+		//	const aiVector3D* vp = &(mesh->mVertices[i]);
+		//	points[i * 3] = (GLfloat)vp->x;
+		//	points[i * 3 + 1] = (GLfloat)vp->y;
+		//	points[i * 3 + 2] = (GLfloat)vp->z;
+		//}
 	}
 	if (mesh->HasNormals ()) {
 		normals = (GLfloat*)malloc (*point_count * 3 * sizeof (GLfloat));
@@ -155,13 +174,19 @@ int main () {
 	glEnable (GL_CULL_FACE); // cull face
 	glCullFace (GL_BACK); // cull back face
 	glFrontFace (GL_CCW); // set counter-clock-wise vertex order to mean the front
-	glClearColor (0.2, 0.2, 0.2, 1.0); // grey background to help spot mistakes
+	glClearColor (0.4, 0.4, 0.4, 1.0); // grey background to help spot mistakes
 	glViewport (0, 0, g_gl_width, g_gl_height);
 
 	/* load the mesh using assimp */
 	GLuint monkey_vao;
 	int monkey_point_count = 0;
-	assert (load_mesh (MESH_FILE, &monkey_vao, &monkey_point_count));
+	assert (load_mesh ("1a30adabf5a2bb848af30108ea9ccb6c.obj", &monkey_vao, &monkey_point_count));
+
+  // Jiaqi: 
+  /* load second mesh */
+  //GLuint bunny_vao;
+  //int bunny_point_count = 0;
+  //assert (load_mesh ("Tube02_fixed.obj", &bunny_vao, &bunny_point_count));
 	
 /*-------------------------------CREATE SHADERS-------------------------------*/
 	GLuint shader_programme = create_programme_from_files (
@@ -188,9 +213,9 @@ int main () {
 	};
 	
 		
-	float cam_speed = 1.0f; // 1 unit per second
+	float cam_speed = 10.0f; // 1 unit per second
 	float cam_yaw_speed = 10.0f; // 10 degrees per second
-	float cam_pos[] = {0.0f, 0.0f, 5.0f}; // don't start at zero, or we will be too close
+	float cam_pos[] = {0.0f, 0.0f, 10.0f}; // don't start at zero, or we will be too close
 	float cam_yaw = 0.0f; // y-rotation in degrees
 	mat4 T = translate (identity_mat4 (), vec3 (-cam_pos[0], -cam_pos[1], -cam_pos[2]));
 	mat4 R = rotate_y_deg (identity_mat4 (), -cam_yaw);
@@ -217,6 +242,11 @@ int main () {
 		glUseProgram (shader_programme);
 		glBindVertexArray (monkey_vao);
 		glDrawArrays (GL_TRIANGLES, 0, monkey_point_count);
+
+    // Jiaqi: 
+		//glBindVertexArray (bunny_vao);
+		//glDrawArrays (GL_TRIANGLES, 0, bunny_point_count);
+
 		// update other events like input handling 
 		glfwPollEvents ();
 		
