@@ -48,5 +48,9 @@ void main() {
 	/* to test parts of the equation we use them as colours. here we use the
 	dot-product from the specular lighting equation as the colour of each
 	fragment */
-	frag_colour.xyz = vec3 (dot_prod_specular, dot_prod_specular, dot_prod_specular);
+    frag_colour.xyz = vec3 (dot_prod_specular, dot_prod_specular, dot_prod_specular);
+    frag_colour.xyz = vec3 (Id.x, Id.y, Id.z);
+    frag_colour.xyz = vec3 (Is.x, Is.y, Is.z);
+    frag_colour.xyz = vec3 (Ia.x, Ia.y, Ia.z);
+    frag_colour.xyz = vec3 (texel_e.x, texel_e.y, texel_e.z);
 }

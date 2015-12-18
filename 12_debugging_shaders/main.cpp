@@ -69,7 +69,9 @@ bool load_texture (const char* file_name, GLuint* tex) {
 		}
 	}
 	glGenTextures (1, tex);
-	glActiveTexture (GL_TEXTURE0);
+	//glActiveTexture (GL_TEXTURE0);  
+  // Jiaqi: WHY??? Outside this function, we write: glActiveTexture(GL_TEXTURE0, 1, 2, 3)
+  // But now, we just active GL_TEXTURE0. WHY???
 	glBindTexture (GL_TEXTURE_2D, *tex);
 	glTexImage2D (
 		GL_TEXTURE_2D,
