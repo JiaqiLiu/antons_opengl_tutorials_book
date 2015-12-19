@@ -160,7 +160,9 @@ int main () {
 	
 	// load texture
 	GLuint tex_diff, tex_spec, tex_amb, tex_emiss;
-	glActiveTexture (GL_TEXTURE0);
+  // Jiaqi: 
+  // This is very important. This number matches the 'layout' in the fragment shader. 
+	glActiveTexture (GL_TEXTURE0); 
 	assert (load_texture ("boulder_diff.png", &tex_diff));
 	glActiveTexture (GL_TEXTURE1);
 	assert (load_texture ("boulder_spec.png", &tex_spec));
